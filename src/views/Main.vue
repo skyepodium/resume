@@ -1,0 +1,268 @@
+<template>
+  <div>
+    <div class="over-head" />
+    <div class="container">
+      <Header />
+      <section>
+        <SectionTitle title="About Me" />
+        <div class="row">
+          <div class="row-left">
+            <img
+              class="my-photo"
+              src="@/assets/myphoto.jpeg"
+            >
+          </div>
+          <div class="row-right">
+            <h4>
+              Introduction
+            </h4>
+            <ul class="ul-text">
+              <li>
+                안녕하세요 <span class="bold highlight">3년차 백엔드 개발자</span> 김정윤입니다.
+              </li>
+              <li>
+                낯선곳에 가야 배움이 있음을 생각하며 새로운 도전에 지속적으로 앞서갑니다.
+              </li>
+              <li>
+                스스로에게 새로운 과제를 내어주며 지속해서 발전해나가는 기회를 제공하고자 합니다.
+              </li>
+              <li>
+                함께 성장하기에 관심이 많습니다.
+              </li>
+            </ul>
+          </div>        
+        </div>
+      </section>
+      <ClearBoth /> 
+      <section>
+        <SectionTitle title="Work Experience" />
+        <div class="row">
+          <div class="row-left">
+            <h3>
+              삼성SDS
+            </h3>
+            <span class="role">
+              Backend Developer
+            </span>
+            <span class="period">
+              2018.07 ~ 현재
+            </span>
+          </div>
+
+          <div class="row-right">
+            <RowDate
+              title="TXP (Talent eXchange Platform)"
+              start-date="2020.04"
+              end-date="2021.07"
+            />
+
+            <RowText
+              title="Description" 
+              text="사용자의 기술 이력 기반으로 사내 프로젝트를 매칭해주는 서비스입니다. (사내용 링크드인)"
+            />
+
+            <RowList
+              title="Main Task" 
+              :text-list="['피드, 유저 관리, 통계 등 SNS 그룹 기능이 포함된 SQUARE 개발',
+                           '기술, 프로젝트 수행 이력, 도메인에 따라 최적의 인력을 찾아주는 부서인력 검색 서비스 구현',
+                           '드래그앤 드랍을 통해 인력을 간트차트에 배치 및 가득률을 조회하는 부서인력 시뮬레이션 서비스 개발']"
+            />
+
+            <RowText
+              title="Tech Stack" 
+              text="Spring Boot, MSA, Feign Client, Rabbit MQ, Vue.js, SDS Cloud"
+            />
+          </div>
+
+          <div class="row-right">
+            <RowDate
+              title="삼성 에스원 보안관리 플랫폼"
+              start-date="2019.07"
+              end-date="2020.04"
+            />   
+
+            <RowText
+              title="Description" 
+              text="하드웨어의 상태를 확인하고, 특정 규칙에 따라 이벤트를 수행하는 종합관리 플랫폼입니다."
+            />  
+
+            <RowList
+              title="Main Task" 
+              :text-list="['규칙 조합에 따라 하드웨어를 컨트롤 하는 시스템 이벤트 룰셋 구현',
+                           '하드웨어 상태 관리 웹 프론트 개발',
+                           '보안 카드 등록관리 시스템 개발']"
+            />
+
+            <RowText
+              title="Tech Stack" 
+              text="Spring Boot, MSA, Feign Client, Rabbit MQ, Vue.js, Azure"
+            />
+          </div>       
+
+          <div class="row-right">
+            <RowDate
+              title="삼성 멀티캠퍼스 교육 애플리케이션"
+              start-date="2018.10"
+              end-date="2019.06"
+            />   
+                 
+            <RowText
+              title="Description" 
+              text="하이브리드 모바일 애플리케이션 및 프리미엄 지식 서비스 CERI CEO 개발"
+            />  
+
+            <RowList
+              title="Main Task" 
+              :text-list="['모바일 앱의 마이페이지 개발',
+                           '모바일 동영상 플레이어 밝기, 소리 조절 UI 개발',
+                           '세리 CEO의 컨텐츠 조회 페이지, 고객센터 개발']"
+            />
+
+            <RowText
+              title="Tech Stack" 
+              text="Spring Boot, Vue.js"
+            />
+          </div>      
+        </div>
+      </section>
+      <ClearBoth />
+      <section>
+        <SectionTitle title="Skills" />
+        <div class="row">
+          <div class="row-left">
+            <h3>
+              Backend
+            </h3>
+          </div>
+
+          <div class="row-right no-margin-bottom">
+            <RowList
+              :text-list="[
+                'Spring Boot를 사용한 개발경험이 많으며, Kibana연동을 통한 로그관리 수행 경험이 있습니다.',
+                'JPA를 통해 효율적으로 데이터를 조회합니다.',
+                'Gradle, Maven을 사용해 빌드 및 라이브러리 관리를 수행합니다.']"
+            />
+          </div>
+          <ClearBoth />
+
+          <div class="row-left">
+            <h3>
+              Frontend
+            </h3>
+          </div>
+
+          <div class="row-right no-margin-bottom">
+            <RowList
+              :text-list="['ES6+ 문법에 익숙합니다.',
+                           'Vue.js를 사용한 웹서비스 개발 경험이 많으며, 웹뷰를 통한 하이브리앱 구축이 가능합니다.',
+                           '크로스 브라우징에 대응할 수 있습니다.'
+              ]"
+            />
+          </div>
+          <ClearBoth />
+
+          <div class="row-left">
+            <h3>
+              DevOps
+            </h3>
+          </div>
+
+          <div class="row-right no-margin-bottom">
+            <RowList
+              :text-list="['AWS EC2, RDS, S3 를 통한 퍼블릭 클라우드 배포경험이 있습니다.',
+                           'PostgreSQL, MariaDB 오픈소스DB 사용이 가능하며, Oracle에서 PostgreSQL 전환을 수행한 경험이 있습니다.', 
+                           'Jenkins을 사용한 CI/CD 수행이 가능합니다.']"
+            />
+          </div>            
+          <ClearBoth />
+
+          <div class="row-left">
+            <h3>
+              Collaboration
+            </h3>
+          </div>
+
+          <div class="row-right no-margin-bottom">
+            <RowList
+              :text-list="['Jira 일감관리 및 GIT 브랜치 연동을 통해 이슈트래킹이 가능합니다.',
+                           'Confluence를 사용한 자료 및 산출물 관리 경험이 있습니다.',
+                           'git을 통한 소스코드 형상관리를 수행합니다.']"
+            />
+          </div>        
+        </div>
+      </section>    
+      <ClearBoth />
+      <section>
+        <SectionTitle title="Other Experiences" />
+        <div class="row row-linear">
+          <h3>
+            숭실대학교
+          </h3>
+          <div class="sub-title">
+            <span>
+              화학, 산업정보시스템공학
+            </span>
+            <span>
+              2010.03 ~ 2018.07
+            </span>
+          </div>
+
+          <p>
+            개발자를 목표로 컴퓨터 공학 과목을 수강했습니다. C, C++ 프로그래밍, SQL 및 데이터베이스, HTML·CSS·JavaScript 등의 과목을 우수한 성적으로 이수했습니다.
+          </p>
+        </div>
+
+        <div class="row row-linear">
+          <h3>
+            Nexters
+          </h3>
+          <div class="sub-title">
+            <span>
+              2016.07 ~ 2017.06
+            </span>
+          </div>          
+
+          <p>
+            대학생 연합 개발 동아리 Nexters의 구성원으로 활동했습니다. 공연의 취향이 비슷한 사람들과 함께 공연에 참석하는 서비스 '가치'를 개발했습니다.
+          </p>
+        </div>        
+
+
+        <div class="row row-linear">
+          <h3>
+            Unithon 6th
+          </h3>
+          <div class="sub-title">
+            <span>
+              AWS 특별상
+            </span>
+          </div>
+          <p>
+            대학생 연합 해커톤 Unithon에 참여했습니다. 꾸준한 성장을 원하는 사람들을 위한 자기관리 앱을 만들었습니다. Django Backend 개발을 담당했으며 인증 및 조회 기능을 위한 REST API를 개발했습니다.
+          </p>
+        </div>
+      </section>      
+    </div>
+  </div>
+</template>
+
+<script>
+import Header from '@/components/Header.vue'
+import ClearBoth from '@/components/ClearBoth'
+import SectionTitle from '@/components/SectionTitle.vue'
+import RowDate from '@/components/RowDate.vue'
+import RowText from '@/components/RowText.vue'
+import RowList from '@/components/RowList.vue'
+
+    export default {
+        name: 'Main',
+        components: {
+            Header,
+            SectionTitle,
+            ClearBoth,
+            RowDate,
+            RowText,
+            RowList
+        }
+    }
+</script>
