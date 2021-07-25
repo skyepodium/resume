@@ -1,4 +1,8 @@
 module.exports = {
-    publicPath: '/resume/',
-    outputDir: './docs'
+	publicPath: process.env.NODE_ENV === 'production'
+    ? '/resume/'
+    : '/',
+	outputDir: process.env.NODE_ENV === 'production'
+    ? './docs'
+    : './dist'    
 }
