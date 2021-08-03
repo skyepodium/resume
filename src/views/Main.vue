@@ -4,6 +4,7 @@
     
     <div class="container">
       <Header
+        v-if="header"
         :name="header.name"
         :position="header.position"
         :github-link="header.githubLink"
@@ -13,22 +14,26 @@
       />
 
       <AboutMe 
+        v-if="aboutMe"
         :about-me="aboutMe"
       />
 
       <ClearBoth /> 
 
       <workExperiences 
+        v-if="workExperiences"
         :work-experiences="workExperiences"
       />
 
       <ClearBoth />
 
       <Skills 
+        v-if="skills"
         :skills="skills"
       />
       
       <OtherExperiences 
+        v-if="otherExperiences"
         :other-experiences="otherExperiences"
       />
     </div>
@@ -42,6 +47,7 @@ import AboutMe from '@/components/AboutMe.vue'
 import WorkExperiences from '@/components/WorkExperiences.vue'
 import OtherExperiences from '@/components/OtherExperiences.vue'
 import Skills from '@/components/Skills.vue'
+import info from '@/info/info.json'
 
     export default {
         name: 'Main',
@@ -55,113 +61,19 @@ import Skills from '@/components/Skills.vue'
         },
         data() {
           return {
-            header: {
-              name: '김정윤',
-              position: 'Backend Developer',
-              githubLink: 'https://github.com/skyepodium',
-              linkedinLink: 'https://www.linkedin.com/in/jung-yoon-kim-14522ab7/',
-              email: 'skyepodium@gmail.com',
-              blog: 'https://velog.io/@skyepodium',
-            },
-            aboutMe: {
-              title: 'Introduction',
-              contentList: [
-                '안녕하세요 <span class="bold highlight">3년차 백엔드 개발자</span> 김정윤입니다.',
-                '스스로에게 새로운 과제를 내어주며 지속해서 발전해나가는 기회를 제공하고자 합니다.',
-                '함께 성장하기에 관심이 많습니다.'
-              ]
-            },
-            workExperiences: [
-              {
-                title: '삼성SDS',
-                subTitle: 'Backend Developer',
-                period: '2018.07 ~ 현재',
-                contentList: [
-                  {
-                    title: 'TXP (Talent eXchange Platform)',
-                    startDate: '2020.04',
-                    endDate: '2021.07',
-                    description: '사용자의 기술 이력 기반으로 사내 프로젝트를 매칭해주는 서비스입니다. (사내용 링크드인)',
-                    mainTaskList: ['피드, 유저 관리, 통계 등 SNS 그룹 기능이 포함된 SQUARE 개발',
-                          '기술, 프로젝트 수행 이력, 도메인에 따라 최적의 인력을 찾아주는 부서인력 검색 서비스 구현',
-                          '드래그앤 드랍을 통해 인력을 간트차트에 배치 및 가득률을 조회하는 부서인력 시뮬레이션 서비스 개발'],
-                    techStack: 'Spring Boot, MSA, Feign Client, Rabbit MQ, Vue.js, SDS Cloud'
-                  },
-                  {
-                    title: '삼성 에스원 보안관리 플랫폼',
-                    startDate: '2019.07',
-                    endDate: '2020.04',
-                    description: '하드웨어의 상태를 확인하고, 특정 규칙에 따라 이벤트를 수행하는 종합관리 플랫폼입니다.',
-                    mainTaskList: ['규칙 조합에 따라 하드웨어를 컨트롤 하는 시스템 이벤트 룰셋 구현',
-                           '하드웨어 상태 관리 웹 프론트 개발',
-                           '보안 카드 등록관리 시스템 개발'],
-                    techStack: 'Spring Boot, MSA, Feign Client, Rabbit MQ, Vue.js, Azure'
-                  },
-                  {
-                    title: '삼성 멀티캠퍼스 교육 애플리케이션',
-                    startDate: '2018.10',
-                    endDate: '2019.06',
-                    description: '하이브리드 모바일 애플리케이션 및 프리미엄 지식 서비스 CERI CEO 개발',
-                    mainTaskList: ['모바일 앱의 마이페이지 개발',
-                           '모바일 동영상 플레이어 밝기, 소리 조절 UI 개발',
-                           '세리 CEO의 컨텐츠 조회 페이지, 고객센터 개발'],
-                    techStack: 'Spring Boot, Vue.js'
-                  }                                    
-                ]
-              }
-            ],
-            skills: [
-              {
-                title: 'Backend',
-                contentList: ['Spring Boot를 사용한 개발경험이 많으며, Kibana연동을 통한 로그관리 수행 경험이 있습니다.',
-                           'PA를 통해 효율적으로 데이터를 조회합니다.',
-                           'Gradle, Maven을 사용해 빌드 및 라이브러리 관리를 수행합니다.'
-                ]
-              },
-              {
-                title: 'Frontend',
-                contentList: ['ES6+ 문법에 익숙합니다.',
-                           'Vue.js를 사용한 웹서비스 개발 경험이 많으며, 웹뷰를 통한 하이브리앱 구축이 가능합니다.',
-                           '크로스 브라우징에 대응할 수 있습니다.'
-                ]
-              },
-              {
-                title: 'DevOps',
-                contentList: ['AWS EC2, RDS, S3 를 통한 퍼블릭 클라우드 배포경험이 있습니다.',
-                           'PostgreSQL, MariaDB 오픈소스DB 사용이 가능하며, Oracle에서 PostgreSQL 전환을 수행한 경험이 있습니다.', 
-                           'Jenkins을 사용한 CI/CD 수행이 가능합니다.'
-                ]
-              },
-              {
-                title: 'Collaboration',
-                contentList: ['Jira 일감관리 및 GIT 브랜치 연동을 통해 이슈트래킹이 가능합니다.',
-                           'Confluence를 사용한 자료 및 산출물 관리 경험이 있습니다.',
-                           'git을 통한 소스코드 형상관리를 수행합니다.'
-                ]
-              }
-            ],
-            otherExperiences: 
-            [
-              {
-                title: '숭실대학교',
-                subTitle: '화학, 산업정보시스템공학',
-                period: '2010.03 ~ 2018.07',
-                content: '개발자를 목표로 컴퓨터 공학 과목을 수강했습니다. C, C++ 프로그래밍, SQL 및 데이터베이스, HTML·CSS·JavaScript 등의 과목을 우수한 성적으로 이수했습니다.',
-              },
-              {
-                title: 'Nexters',
-                subTitle: '',
-                period: '2016.07 ~ 2017.06',
-                content: '대학생 연합 개발 동아리 Nexters의 구성원으로 활동했습니다. 공연의 취향이 비슷한 사람들과 함께 공연에 참석하는 서비스 가치를 개발했습니다.',
-              },
-              {
-                title: 'Unithon 6th',
-                subTitle: 'AWS 특별상',
-                period: '',
-                content: '대학생 연합 해커톤 Unithon에 참여했습니다. 꾸준한 성장을 원하는 사람들을 위한 자기관리 앱을 만들었습니다. Django Backend 개발을 담당했으며 인증 및 조회 기능을 위한 REST API를 개발했습니다.',
-              }
-            ]
+            header: null,
+            aboutMe: null,
+            workExperiences: null,
+            skills: null,
+            otherExperiences: null
           }
+        },
+        created() {
+          this.header = info.header
+          this.aboutMe = info.aboutMe
+          this.workExperiences = info.workExperiences
+          this.skills = info.skills
+          this.otherExperiences = info.otherExperiences
         }
     }
 </script>
