@@ -5,6 +5,11 @@
     font-family: 'Spoqa Han Sans Neo', 'sans-serif'
 }
 
+input {
+    margin: 0;
+    padding: 0;
+}
+
 .section-title {
     border-bottom: 2px solid rgb(32, 201, 151);
 }
@@ -33,9 +38,34 @@ h2 {
     margin: 4rem 0 2rem;
 }
 
+h2 input{
+    font-weight: bold;
+    text-align:center;
+        border: none;
+}
+
+h2 input:hover, h2 input:focus{
+    color:rgb(32, 201, 151);
+}
+
+input:focus {
+    outline: none;
+}
+
+
 h3{
     font-size: 2rem;
     margin: 0 0 1rem;
+}
+
+h3 input{
+    font-weight: 300;
+    text-align:center;
+        border: none;
+}
+
+h3 input:hover, h3 input:focus{
+    color:rgb(32, 201, 151);
 }
 
 h4{

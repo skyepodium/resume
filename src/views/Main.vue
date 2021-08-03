@@ -47,7 +47,6 @@ import AboutMe from '@/components/AboutMe.vue'
 import WorkExperiences from '@/components/WorkExperiences.vue'
 import OtherExperiences from '@/components/OtherExperiences.vue'
 import Skills from '@/components/Skills.vue'
-import info from '@/info/info.json'
 
     export default {
         name: 'Main',
@@ -59,21 +58,27 @@ import info from '@/info/info.json'
             OtherExperiences,
             Skills
         },
-        data() {
-          return {
-            header: null,
-            aboutMe: null,
-            workExperiences: null,
-            skills: null,
-            otherExperiences: null
-          }
-        },
-        created() {
-          this.header = info.header
-          this.aboutMe = info.aboutMe
-          this.workExperiences = info.workExperiences
-          this.skills = info.skills
-          this.otherExperiences = info.otherExperiences
+        props: {
+          header: {
+            type: Object,
+            default: () => {}
+          },
+          aboutMe: {
+            type: Object,
+            default: () => {}
+          },
+          workExperiences: {
+            type: Object,
+            default: () => {}
+          },
+          skills: {
+            type: Object,
+            default: () => {}
+          },
+          otherExperiences: {
+            type: Object,
+            default: () => {}
+          },
         }
     }
 </script>
