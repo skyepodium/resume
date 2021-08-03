@@ -1,24 +1,33 @@
 <template>
   <div>
-    <p class="center-align">
-      Email:
-      <a
-        class="color-black bold"
-        href="skyepodium@gmail.com"
-      >skyepodium@gmail.com</a>
-    </p>
-    <p class="center-align">
-      Blog: 
-      <a 
-        class="color-black bold"
-        href="https://velog.io/@skyepodium"
-      >https://velog.io/@skyepodium</a>
-    </p>
+    <ContactLink 
+      title="Email:"
+      :text="email"
+    />
+    <ContactLink 
+      title="Blog:"
+      :text="blog"
+    />
   </div>
 </template>
 
 <script>
+import ContactLink from '@/components/ContactLink.vue'
+
     export default {
-        name: 'Contact'        
+        name: 'Contact',
+        components: {
+          ContactLink
+        },
+        props: {
+          email: {
+            type: String,
+            default: ''
+          },
+          blog: {
+            type: String,
+            default: ''
+          }
+        }
     }
 </script>

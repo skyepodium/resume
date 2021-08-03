@@ -1,19 +1,22 @@
 <template>
   <section>
     <h2 class="center-align no-margin">
-      김정윤
+      {{ name }}
     </h2>
     <h3 class="center-align no-bold">
-      Backend Developer
+      {{ position }}
     </h3>
-    <image-list 
-      left-href="https://github.com/skyepodium"
+    <ImageList
+      :left-href="githubLink"
       left-image="@/assets/github.png"
-      right-href="https://www.linkedin.com/in/jung-yoon-kim-14522ab7/"
+      :right-href="linkedinLink"
       right-image="@/assets/linkedin.png"
     />
     <ClearBoth />
-    <Contact />
+    <Contact 
+      :email="email"
+      :blog="blog"
+    />
   </section>
 </template>
 
@@ -28,6 +31,32 @@ import Contact from '@/components/Contact.vue'
             ImageList,
             ClearBoth,
             Contact
+        },
+        props: {
+          name: {
+            type: String,
+            default: ''
+          },
+          position: {
+            type: String,
+            default: ''
+          },
+          githubLink: {
+            type: String,
+            default: ''
+          },
+          linkedinLink: {
+            type: String,
+            default: ''
+          },
+          email: {
+            type: String,
+            default: ''
+          },
+          blog: {
+            type: String,
+            default: ''
+          }
         }
     }
 </script>

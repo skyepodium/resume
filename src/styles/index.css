@@ -1,6 +1,8 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 * {
     margin:0;
     padding:0;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'
 }
 
 .section-title {
@@ -173,6 +175,10 @@ p {
 }
 .container {
     margin-bottom: 5rem;
+}
+
+.margin-little {
+    margin-bottom: 0.4rem
 }
 
 @media (min-width: 800px) {
